@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Hash;
 
 class UserController extends Controller
 {
@@ -19,7 +23,7 @@ class UserController extends Controller
             ->select('id', 'name', 'email', 'handphone', DB::raw('DATE_FORMAT(created_at, "%d %M %Y) as created_at'))
             ->orderBy('id', 'desc')
             ->paginate(10);
-        return view('pages.users.index'. compact('users'));
+        return view('pages.users.index', compact('users'));
     }
 
     /**
