@@ -16,14 +16,6 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        // $users = DB::table('users')
-        //     ->when($request->input('name'), function ($query, $name) {
-        //         return $query->where('name', 'like', '%' . $name . '%');
-        //     })
-        //     ->select('id', 'name', 'email', 'handphone', DB::raw('DATE_FORMAT(created_at, "%d %M %Y") as created_at'))
-        //     ->orderBy('id', 'desc')
-        //     ->paginate(10);
-        // return view('pages.users.index', compact('users'));
         return view('pages.users.index');
     }
 

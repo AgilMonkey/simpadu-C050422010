@@ -29,6 +29,7 @@
                             {{ $message }}
                         </div>
                     @enderror
+
                 </div>
 
                 <div class="form-group">
@@ -49,21 +50,9 @@
                         name="password" tabindex="2">
                     @error('password')
                         <div class="invalid-feedback">
-                            please fill in your password
+                            {{ $message }}
                         </div>
                     @enderror
-                </div>
-
-                <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox"
-                            name="remember"
-                            class="custom-control-input"
-                            tabindex="3"
-                            id="remember-me">
-                        <label class="custom-control-label"
-                            for="remember-me">Remember Me</label>
-                    </div>
                 </div>
 
                 <div class="form-group">
@@ -72,10 +61,12 @@
                     </button>
                 </div>
             </form>
+
         </div>
+
     </div>
     <div class="text-muted mt-5 text-center">
-        Don't have an account? <a href="{{ route('register') }}">Create One</a>
+        Don't have an account? <a href="{{route('register')}}">Create One</a>
     </div>
 @endsection
 
@@ -83,3 +74,4 @@
     <!-- JS Libraies -->
 
     <!-- Page Specific JS File -->
+@endpush
